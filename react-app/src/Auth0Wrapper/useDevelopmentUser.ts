@@ -16,7 +16,7 @@ const useDevelopmentAuth = () => {
                 isLoading: true,
             })
 
-            fetch(`${config.apiServer}${config.developmentUserPath}`)
+            fetch(`${config.proxyServer}${config.developmentUserPath}`)
                 .then(response => response.json())
                 .then(authUser => {
                     setAuth({
