@@ -6,4 +6,4 @@ sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 443 -j REDIRECT --to-p
 git checkout master && git pull
 
 # run proxy server:
-cd .. && npm install && tmux & make run-server
+cd .. && npm install && tmux npm run server
