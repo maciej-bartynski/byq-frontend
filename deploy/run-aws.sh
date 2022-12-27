@@ -6,4 +6,4 @@ sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 443 -j REDIRECT --to-p
 git checkout master && git pull
 
 # run proxy server:
-MARKER=staging node ../envs/create-env.js && npm install && tmux && node ./server.js
+cd .. && MARKER=staging node ./envs/create-env.js && npm install && tmux && node ./server.js
