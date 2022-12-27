@@ -1,0 +1,21 @@
+.root {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    min-width: 16px;
+    margin-right: calc(var(--margin-base) / 2);
+    justify-content: center;
+    align-items: center;
+}
+
+.label{
+    margin-right: var(--margin-base);
+}
+
+.content {
+    font-weight: bold;
+}

@@ -1,0 +1,40 @@
+.root {
+    width: 100%;
+    padding: 15px 0 20px 0;
+    height: 50px;
+}
+
+.root_withMargin {
+    composes: root;
+    padding: 15px var(--margin-base) 20px var(--margin-base)
+}
+
+.title {
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 100;
+    text-align: left;
+    color: var(--color-secondary); 
+    margin: 0;
+    padding: 0;  
+}
+
+.title > span {
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 100;
+    text-align: left;
+    color: var(--color-secondary);  
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}

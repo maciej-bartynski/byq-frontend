@@ -1,0 +1,9 @@
+.root {
+    width: var(--height-base);
+    border-radius: var(--radius-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}

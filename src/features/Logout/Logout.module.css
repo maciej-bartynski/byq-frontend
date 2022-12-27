@@ -1,0 +1,16 @@
+.root {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: solid 1px var(--color-controlers);
+    background: transparent;
+    color: var(--color-controlers);
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 30px;
+    width: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

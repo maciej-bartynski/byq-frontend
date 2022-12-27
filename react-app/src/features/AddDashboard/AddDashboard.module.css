@@ -1,0 +1,19 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 140px;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    border: solid 1px var(--color-controlers-secondary);
+    color: var(--color-controlers-secondary);
+    border-radius: 4px;
+    align-self: stretch;
+}
+
+.root:hover {
+    box-shadow: var(--box-shadow);
+    border: solid 1px transparent;
+}

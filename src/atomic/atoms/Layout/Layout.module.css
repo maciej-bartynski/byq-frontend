@@ -1,0 +1,42 @@
+.header {
+    width: 100%;
+    height: var(--navbar-height);
+    z-index: var(--navbar-zindex);
+    position: relative;
+}
+
+.route {
+    width: 100%;
+    height: var(--below-navbar-height);
+    z-index: var(--below-navbar-zindex);
+    position: relative;
+    overflow: auto;
+}
+
+.routeBody {
+    width: 100%;
+    height: calc(100% - var(--navbar-height));
+    z-index: var(--below-navbar-zindex);
+    position: relative;
+    overflow: auto;
+}
+
+.h1 {
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.h2 {}
+
+.h3 {}
+
+.paragraph {}
+
+.text {}
+

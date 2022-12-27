@@ -1,0 +1,22 @@
+.root {
+    border: solid 1px var(--color-controlers);
+    outline-color: var(--color-primary);
+    color: var(--color-controlers);
+    background: transparent;
+}
+
+.root:hover {
+    background-color: var(--color-controlers-secondary);
+}
+
+.root:active {
+    color: var(--color-controlers-hover);
+    border-color: var(--color-controlers-hover);
+}
+
+.root:disabled,
+.root:disabled:hover {
+    border-color: var(--color-controlers-secondary);
+    color: var(--color-controlers-secondary);
+    background-color: transparent;
+}

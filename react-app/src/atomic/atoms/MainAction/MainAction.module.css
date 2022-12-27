@@ -1,0 +1,22 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    border: solid 1px var(--color-controlers);
+    background-color: var(--color-controlers);
+    color: white;
+    transition: all 200ms ease-in-out;
+}
+
+.root:hover {
+    transform: rotate(20deg) scale(1);
+}
+
+.root:active {
+    transition: none;
+    transform: rotate(20deg) scale(0.9);
+}

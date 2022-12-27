@@ -1,0 +1,136 @@
+.root {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    height: 30px;
+    border-radius: 8px;
+    border-color: transparent;
+    outline-color: transparent;
+    width: 100%;
+    transition: all 300ms;
+    position: relative;
+    padding-right: 0;
+}
+
+.root_small {
+    height: 22px;
+}
+
+.root:hover {
+    background-color: var(--color-controlers-secondary);
+}
+
+.root_editMode.root {
+    background-color: var(--color-page);
+    padding-right: 50px;
+}
+
+.label {
+    flex: auto;
+}
+
+.input {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-controlers);
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    height: 100%;
+    padding-left: 36px;
+    transition: all 300ms;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    padding-right: 0px;
+}
+
+.root_small .input {
+    font-size: 10px;
+}
+
+.root_large .input {
+    font-size: 20px;
+}
+
+.root_editMode .input {
+    font-weight: 100;
+    color: var(--color-secondary);
+}
+
+.actions {
+    display: flex;
+    align-items: stretch;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: left 300ms;
+    height: 100%;
+}
+
+.singleAction {
+    /* background: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actionEdit {
+    /* composes: singleAction;
+    width: 20px;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--color-secondary);
+    font-size: 10px; */
+}
+
+.actionCheck {
+    composes: singleAction;
+    width: 20px;
+    /* border: none;
+    outline: none;
+    background: none; */
+    /* color: var(--color-green-alert); */
+}
+
+.actionReject {
+    composes: singleAction;
+    width: 20px;
+    /* border: none;
+    outline: none;
+    background: none; */
+    /* color: var(--color-red-alert); */
+}
+
+.actionCheck i,
+.actionReject i {
+    /* width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color-elements);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    line-height: normal; */
+}
+
+.root_editMode .actions {
+    left: calc(100% - 45px);
+}
+
+.root_editMode .input {
+    padding-left: 8px;
+    padding-right: 0px;
+}

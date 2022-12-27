@@ -1,0 +1,61 @@
+.root {
+    height: var(--height-base);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--margin-base);
+    position: relative;
+}
+
+.image {
+    width: var(--height-base);
+    height: var(--height-base);
+    border-radius: calc(var(--height-base) / 2);
+    display: block;
+    background: var(--color-controlers);
+    color: white;
+    font-size: 12px;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+    position: relative;
+}
+
+.email {
+    font-size: 10px;
+    margin: 0;
+    text-transform: lowercase;
+    width: 100%;
+    padding: 0;
+    line-height: 14px;
+    text-align: left;
+}
+
+.dropdown {
+    z-index: 0;
+    padding: var(--margin-base);
+    background-color: var(--color-elements);
+    border-radius: var(--radius-base);
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    padding-top: calc(var(--height-base) + 2px + var(--margin-base));
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-base);
+    width: 300px;
+    color: var(--color-secondary)
+}
+
+@media (max-width: 312px) {
+    .dropdown {
+        width: unset;
+    }
+}

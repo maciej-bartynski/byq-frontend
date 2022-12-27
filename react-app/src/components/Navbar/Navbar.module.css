@@ -1,0 +1,31 @@
+.root {
+    width: 100%;
+    height: var(--navbar-height);
+}
+
+.floater {
+    composes: root;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-page);
+    color: var(--color-secondary);
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--navbar-zindex);
+    padding: 0 var(--margin-base);
+    gap: var(--margin-base);
+}
+
+.recentlyVisitedButton {
+    max-width: 100px;
+}
+
+.profile {
+    flex: auto;
+    display: flex;
+    justify-content: flex-end;
+}

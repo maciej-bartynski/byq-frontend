@@ -1,0 +1,55 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: var(--margin-base);
+}
+
+.searcher input {
+    background-color: var(--color-elements);
+}
+
+.actionTile {
+    display: flex;
+    gap: var(--margin-base);
+    background-color: var(--color-elements);
+}
+
+.sections {
+    display: flex;
+    gap: var(--margin-base);
+    padding: 0 var(--margin-base);
+    align-items: flex-start;
+}
+
+.section__banks {
+    min-width: 300px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100%;
+    gap: var(--margin-base);
+    border: solid 1px var(--color-controlers-secondary);
+    border-radius: var(--margin-base);
+    padding-bottom: var(--margin-base);
+}
+
+.section__summary {
+    min-width: 300px;
+    max-height: 100%;
+}
+
+.section__expenses {
+    max-height: 100%;
+    border: solid 1px var(--color-controlers-secondary);
+    border-radius: var(--margin-base);
+    padding: var(--margin-base);
+    padding-top: 0;
+}
+
+.section__sums {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    min-width: 300px;
+    gap: var(--margin-base);
+}

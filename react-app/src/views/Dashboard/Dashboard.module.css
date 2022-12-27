@@ -1,0 +1,36 @@
+.toolbar {
+    display: flex;
+    gap: var(--radius-base);
+    padding: var(--margin-base);
+    align-items: center;
+}
+
+.rotatable {
+    animation: rotate infinite 350ms ease
+}
+
+.list {
+    display: flex;
+    gap: var(--margin-base);
+    padding: 0 var(--margin-base);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.list__item { 
+    width: 300px;
+    min-height: 300px;
+}
+
+.searcher input {
+    background-color: var(--color-elements);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

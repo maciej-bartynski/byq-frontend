@@ -1,0 +1,31 @@
+.root {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    min-height: 150px;
+    border: solid 1px var(--color-controlers-secondary);
+    color: var(--color-controlers-secondary);
+    animation: 2000ms ease-in-out borderPulsing infinite;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 100;
+    border-radius: 10px;
+}
+
+@keyframes borderPulsing {
+    from {
+        border-color: var(--color-controlers-secondary);
+        color: var(--color-controlers);
+    }
+    50% {
+        border-color: var(--color-controlers);
+        color: var(--color-controlers-secondary);
+    }
+    to {
+        border-color: var(--color-controlers-secondary);
+        color: var(--color-controlers);
+    }
+}

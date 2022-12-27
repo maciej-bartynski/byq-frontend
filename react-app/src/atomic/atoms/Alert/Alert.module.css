@@ -1,0 +1,20 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: #fff;
+    font-size: 8px;
+    line-height: 12px;
+    font-weight: 500;
+    border-radius: 50%;
+}
+
+.bgRed{
+    background-color: rgba(247, 64, 64, 1);
+}
+
+.bgYellow {
+    background-color: rgb(247, 174, 64);
+}

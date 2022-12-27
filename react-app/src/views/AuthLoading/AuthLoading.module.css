@@ -1,0 +1,78 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--color-page);
+    min-height: 100vh;
+}
+
+.card {
+    width: 100%;
+    max-width: 300px;
+    padding: 20;
+    border-radius: 10px;
+    background-color: var(--color-elements);
+    box-shadow: var(--box-shadow);
+}
+
+.title {
+    font-size: 15px;
+    line-height: 30px;
+    margin: 20px 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1;
+}
+
+.titleAccent {
+    color: var(--color-controlers);
+    font-size: 30px;
+    line-height: 40px;
+    text-transform: none;
+}
+
+.loginButton {
+    border: none;
+    outline: none;
+    background: var(--color-controlers);
+    color: var(--color-page);
+    font-size: 30px;
+    line-height: 40px;
+    margin: 30px auto 50px auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    display: block;
+}
+
+.loginButton:hover {
+    background: var(--color-controlers-secondary);
+    color: var(--color-primary);
+}
+
+.or {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    color: var(--color-primary);
+}
+
+.contactAdmin {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 50px 0 30px 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    color: var(--color-controlers);
+    text-transform: lowercase;
+}

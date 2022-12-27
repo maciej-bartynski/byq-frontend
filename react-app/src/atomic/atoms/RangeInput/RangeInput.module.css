@@ -1,0 +1,23 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+    gap: 8px;
+}
+
+.rangeInput {
+    flex: 1;
+}
+
+.button {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background-color: var(--color-controlers);
+    color: white;
+    font-size: 8px;
+    padding: 0;
+    font-weight: bold;
+    display: inline-block;
+}   

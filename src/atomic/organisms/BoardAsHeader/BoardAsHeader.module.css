@@ -1,0 +1,106 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    padding: var(--margin-base);
+    position: relative;
+    gap: var(--margin-base)
+}
+
+.title {
+    color: var(--color-controlers);
+}
+
+.boardSummary {
+    max-width: 100%;
+    max-height: calc(100% - ((var(--navbar-height)*2) - var(--margin-base)));
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--margin-base);
+    overflow: auto;
+    padding: var(--margin-base);
+    border-radius: var(--radius-base);
+    position: fixed;
+    top: calc((var(--navbar-height)*2) - var(--margin-base));
+    left: 0;
+    background-color: var(--color-elements);
+    box-shadow: var(--box-shadow);
+    z-index: 100;
+}
+
+.boardSummaryActions {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: var(--margin-base);
+    padding-top: var(--margin-base);
+}
+
+.boardSummaryText {
+    width: 100%;
+    max-width: 300px;
+}
+
+.headline__marker {
+    width: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.headline__content {
+    width: calc(100% - 24px);
+    display: flex;
+    flex-direction: column;
+}
+
+.headline__contentInnerLine {
+    width: 100%;
+    display: flex;
+}
+
+.headline__title,
+.headline__description {
+    width: calc(100% - 100px);
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 25px;
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--color-controlers);
+    font-weight: 500;
+}
+
+.headline__alerts,
+.headline__actions {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.headline__alertsInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 2px;
+}
+
+.headline__description {
+    font-size: 12px;
+    line-height: 25px;
+    color: var(--color-secondary);
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.headline__description strong {
+    letter-spacing: normal;
+}

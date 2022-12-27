@@ -1,0 +1,78 @@
+.root {
+    width: 100%;
+    padding: var(--margin-base);
+    border-bottom: solid 1px var(--color-controlers-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background-color: var(--color-elements);
+}
+
+.content {
+    width: calc(100% - 40px);
+}
+
+.actions {
+    width: 40px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.actions__trash {
+    color: var(--color-secondary);
+    background-color: var(--color-page);
+    border-color: transparent;
+}
+
+.actions__wallet {
+    color: var(--color-green-alert);
+    background-color: var(--color-page);
+    border-color: transparent;
+}
+
+.actions__wallet_clicked {
+    color: var(--color-elements);
+    background-color: var(--color-green-alert);
+    border-color: transparent;
+}
+
+.field {
+    display: grid;
+    grid-template-columns: 20% calc(80% - var(--margin-base));
+    align-items: center;
+    justify-items: left;
+    gap: var(--margin-base);
+}
+
+.field span:first-child {
+    justify-self: right;
+}
+
+.redAlertColor {
+    color: var(--color-red-alert);
+}
+
+.redAlertColor > span:first-child{
+    color: var(--color-red-alert);
+}
+
+.redAlertColor > span:last-child {
+    background-color: var(--color-red-alert);
+    color: white;
+}
+.yellowAlertColor {
+    color: var(--color-yellow-alert);
+}
+
+.yellowAlertColor > span:first-child {
+    color: var(--color-yellow-alert);
+}
+
+.yellowAlertColor > span:last-child {
+    background-color: var(--color-yellow-alert);
+    color: white;
+}

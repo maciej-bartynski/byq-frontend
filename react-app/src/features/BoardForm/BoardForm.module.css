@@ -1,0 +1,14 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--margin-base) * 2);
+}
+
+.title {
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
+    font-weight: bold;
+    color: var(--color-controlers);
+    margin: 0;
+    padding: 0;
+}

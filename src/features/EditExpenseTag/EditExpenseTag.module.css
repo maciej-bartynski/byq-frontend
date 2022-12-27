@@ -1,0 +1,42 @@
+.columns {
+    display: flex;
+    gap: var(--margin-base);
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-base);
+    overflow: auto;
+    max-height: calc(100vh / 2);
+}
+
+.tag {
+    font-size: 10px;
+    line-height: 16px;
+    padding-left: var(--margin-base);
+    display: inline-block;
+    border-radius: var(--radius-base);
+    color: var(--color-primary);
+    border-width: 2px;
+    border-style: solid;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.clearTag {
+    font-size: 10px;
+    line-height: 16px;
+    padding-left: var(--margin-base);
+    display: inline-block;
+    border-radius: var(--radius-base);
+    color: var(--color-elements);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-primary);
+}

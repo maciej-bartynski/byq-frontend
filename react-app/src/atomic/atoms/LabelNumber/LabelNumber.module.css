@@ -1,0 +1,28 @@
+.root {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 8px;
+    background-color: var(--color-icon-primary);
+    font-weight: bold;
+    border: solid 1px transparent;
+    border-radius: 50%;
+    color: white;
+}
+
+.label {
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--color-icon-primary);
+    font-weight: bold;
+    font-family: sans-serif;
+}

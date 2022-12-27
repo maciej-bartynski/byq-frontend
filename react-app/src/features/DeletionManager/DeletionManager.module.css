@@ -1,0 +1,18 @@
+.deletionButton {
+    color: var(--color-red-alert);
+    border-color: var(--color-red-alert);
+}
+.cancelationButton {
+    color: var(--color-yellow-alert);
+    border-color: var(--color-yellow-alert);
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--margin-base) * 2)
+}
+
+.listSection {
+    padding: var(--margin-base);
+}

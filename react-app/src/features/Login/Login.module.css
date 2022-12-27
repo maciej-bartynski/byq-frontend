@@ -1,0 +1,13 @@
+.root {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: var(--color-controlers);
+    color: var(--color-page);
+    font-size: 12px;
+    line-height: 16px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}

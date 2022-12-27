@@ -1,0 +1,18 @@
+.root {
+    background: transparent;
+    border-radius: var(--radius-base);
+    cursor: pointer;
+    height: var(--height-base);
+    display: inline-block;
+    padding: 0 var(--margin-base);
+    min-width: var(--height-base);
+    border: solid 1px var(--color-primary);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.root:disabled,
+.root:disabled:hover {
+    cursor: not-allowed;
+}
