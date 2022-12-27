@@ -7,4 +7,3 @@ git checkout master && git pull
 
 # run proxy server:
 cd .. && npm install && tmux new-session -d -s my_session 'npm run server'
-# tmux npm run server
