@@ -10,8 +10,7 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "server-staging-test": "MARKER=staging node ./envs/create-env.js && react-scripts build && nodemon ./server.js",
-    "server-local-test": "MARKER=local node ./envs/create-env.js && react-scripts build && nodemon ./server.js",
-    "server": "node server.js"
+    "server:local": "MARKER=local node ./envs/create-env.js && cd react-app && npm run build:local && cd .. && nodemon ./server.js",
+    "server": "MARKER=staging node ./envs/create-env.js && node server.js"
   }
 }

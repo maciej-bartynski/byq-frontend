@@ -12,23 +12,23 @@ const app = express();
 const port = process.env.PORT;
 app.use(cors());
 
-app.use('/auth-config', proxy(`${process.env.REACT_APP_API_SERVER}`, {
+app.use('/auth-config', proxy(`${process.env.API_SERVER}`, {
     proxyReqPathResolver: function (req) {
-        const domain = process.env.REACT_APP_API_SERVER;
+        const domain = process.env.API_SERVER;
         const url = `${domain}${req.baseUrl}${req.url}`;
         return url
     }
 }));
-app.use(process.env.REACT_APP_API_PATH, proxy(process.env.REACT_APP_API_SERVER, {
+app.use(process.env.API_PATH, proxy(process.env.API_SERVER, {
     proxyReqPathResolver: function (req) {
-        const domain = process.env.REACT_APP_API_SERVER;
+        const domain = process.env.API_SERVER;
         const url = `${domain}${req.baseUrl}${req.url}`;
         return url
     }
 }));
-app.use('/mocked-me', proxy(process.env.REACT_APP_API_SERVER, {
+app.use('/mocked-me', proxy(process.env.API_SERVER, {
     proxyReqPathResolver: function (req) {
-        const domain = process.env.REACT_APP_API_SERVER;
+        const domain = process.env.API_SERVER;
         const url = `${domain}${req.baseUrl}${req.url}`;
         return url
     }
