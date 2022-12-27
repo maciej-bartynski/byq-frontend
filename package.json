@@ -11,6 +11,6 @@
   },
   "scripts": {
     "server:local": "MARKER=local node ./envs/create-env.js && cd react-app && npm run build:local && cd .. && nodemon ./server.js",
-    "server": "MARKER=staging node ./envs/create-env.js && node server.js"
+    "server": "MARKER=staging node ./envs/create-env.js && node ./server.js"
   }
 }
