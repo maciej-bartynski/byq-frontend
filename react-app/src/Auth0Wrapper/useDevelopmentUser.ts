@@ -16,7 +16,7 @@ const useDevelopmentAuth = () => {
                 isLoading: true,
             })
 
-            fetch(`${config.proxyServer}${config.developmentUserPath}`)
+            fetch(`${config.baseUrl}${config.apiPath}/mocked-me`)
                 .then(response => response.json())
                 .then(authUser => {
                     setAuth({

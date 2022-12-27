@@ -16,7 +16,7 @@ async function fetchByQ(route = "", options = {}) {
         ? 'oauth:john.doe.id'
         : user.sub;
 
-    const API_URL = `${config.proxyServer}${config.apiPath}`
+    const API_URL = `${config.baseUrl}${config.apiPath}`
     return fetch(`${API_URL}/${userId}/${route}`, {
         ...options,
         headers: {

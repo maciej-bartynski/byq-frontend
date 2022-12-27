@@ -24,11 +24,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "server-staging-test": "MARKER=staging node ./envs/create-env.js && react-scripts build && nodemon ./server.js",
-    "server-local-test": "MARKER=local node ./envs/create-env.js && react-scripts build && nodemon ./server.js",
+    "build:local": "MARKER=local node ./envs/create-env.js && react-scripts build",
     "start": "MARKER=local node ./envs/create-env.js && react-scripts start",
     "build": "MARKER=staging node ./envs/create-env.js && react-scripts build",
-    "server": "node server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
