@@ -6,33 +6,39 @@ const proxy = require('express-http-proxy');
 const dotenv = require('dotenv');
 const fs = require('fs');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+const authConfig = require('./auth-config/auth_config.staging.json');
+const EnvsService = require('./services/EnvsService');
+const AuthService = require('./services/AuthService');
+const { mockedUserMe, AuthManagementService } = require('./services/AuthManagementService');
+
 dotenv.config();
+EnvsService.config(process.env);
+AuthService.config(authConfig);
+AuthManagementService.config(authConfig);
 
 const app = express();
-const port = process.env.PORT;
+const port = EnvsService.env.PORT;
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-app.use('/auth-config', proxy(`${process.env.API_SERVER}`, {
-    proxyReqPathResolver: function (req) {
-        const domain = process.env.API_SERVER;
-        const url = `${domain}${req.baseUrl}${req.url}`;
-        return url
-    }
-}));
-app.use(process.env.API_PATH, proxy(process.env.API_SERVER, {
-    proxyReqPathResolver: function (req) {
-        const domain = process.env.API_SERVER;
-        const url = `${domain}${req.baseUrl}${req.url}`;
-        return url
-    }
-}));
-app.use('/mocked-me', proxy(process.env.API_SERVER, {
-    proxyReqPathResolver: function (req) {
-        const domain = process.env.API_SERVER;
-        const url = `${domain}${req.baseUrl}${req.url}`;
-        return url
-    }
+app.use('/auth-config', (req, res) => res.status(200).json(authConfig));
+app.use('/mocked-me', (req, res) => res.status(200).json({
+    message: 'Me',
+    data: mockedUserMe
 }))
+app.use('/users', AuthService.checkJwt, AuthManagementService.fetchAuth0Users);
+
+app.use('/api', AuthService.checkJwt, proxy(EnvsService.env.API_SERVER, {
+    proxyReqPathResolver: function (req) {
+        const domain = EnvsService.env.API_SERVER;
+        const url = `${domain}${req.baseUrl}${req.url}`;
+        return url
+    }
+}));
 
 app.use(express.static('./react-app/build'));
 
@@ -40,20 +46,16 @@ app.get('*', function (req, res) {
     res.sendFile(`${__dirname}/react-app/build/index.html`);
 });
 
-const httpsServerOptions = process.env.HTTPS === 'true'
-    ? {
-        key: fs.readFileSync(`${process.env.CERTS_STORE_PATH}/private.key`),
-        cert: fs.readFileSync(`${process.env.CERTS_STORE_PATH}/certificate.crt`),
-        ca: fs.readFileSync(`${process.env.CERTS_STORE_PATH}/ca_bundle.crt`),
-    }
-    : undefined
-
-if (process.env.HTTPS === 'false') {
-    http.createServer(httpsServerOptions, app).listen(port, () => {
-        console.log(`Listening on port ${port}, server HTTP`)
+if (EnvsService.env.HTTPS) {
+    https.createServer({
+        key: fs.readFileSync(`./cert/private.key`),
+        cert: fs.readFileSync(`./cert/certificate.crt`),
+        ca: fs.readFileSync(`./cert/ca_bundle.crt`),
+    }, app).listen(port, () => {
+        console.log(`Listening on port ${port}, server HTTPS`)
     })
 } else {
-    https.createServer(httpsServerOptions, app).listen(port, () => {
-        console.log(`Listening on port ${port}, server HTTPS`)
+    http.createServer(undefined, app).listen(port, () => {
+        console.log(`Listening on port ${port}, server HTTP`)
     })
 }

@@ -16,7 +16,7 @@ const useDevelopmentAuth = () => {
                 isLoading: true,
             })
 
-            fetch(`${config.baseUrl}${config.apiPath}/mocked-me`)
+            fetch(`/mocked-me`)
                 .then(response => response.json())
                 .then(authUser => {
                     setAuth({

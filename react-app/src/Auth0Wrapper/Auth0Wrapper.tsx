@@ -13,7 +13,7 @@ type AuthConfig = {
     audience: string,
 }
 
-const AUTH_CONFIG_URL = `${config.baseUrl}${config.apiPath}/auth-config`;
+const AUTH_CONFIG_URL = `/auth-config`;
 
 const Auth0Wrapper: FC<PropsWithChildren> = ({ children }) => {
     const [loading, setLoading] = useState<boolean>(true);
