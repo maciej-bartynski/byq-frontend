@@ -8,7 +8,7 @@ const AuthService = {
     },
 
     config(authConfig) {
-        if (!process.env.SKIP_AUTH0) {
+        if (!EnvsService.env.SKIP_AUTH0) {
             this.checkJwt = jwt({
                 secret: jwksRsa.expressJwtSecret({
                     cache: true,

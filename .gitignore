@@ -24,6 +24,9 @@ yarn-error.log*
 
 # custom
 .env
+env.staging
+envs/env.staging
+/envs/env.staging
 cert
 /cert
 deploy/byqstaging.pem
