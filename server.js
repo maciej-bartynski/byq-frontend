@@ -30,7 +30,7 @@ app.use('/mocked-me', (req, res) => res.status(200).json({
     message: 'Me',
     data: mockedUserMe
 }))
-app.use('/users', AuthService.checkJwt, (req, res, next) => AuthManagementService.fetchAuth0Users(req, res, next) );
+app.use('/users', AuthService.checkJwt, (req, res, next) => AuthManagementService.fetchAuth0Users.bind(AuthManagementService)(req, res, next) );
 
 app.use('/api', AuthService.checkJwt, proxy(EnvsService.env.API_SERVER, {
     proxyReqPathResolver: function (req) {
