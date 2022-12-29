@@ -179,6 +179,7 @@ function getInstance(authConfig, mockOtherUsers) {
 
     if (!this.instance) {
         this.instance = service;
+        service.fetchManagementAccessToken()
     }
 
     return this.instance;
