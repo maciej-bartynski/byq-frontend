@@ -12,12 +12,12 @@ const mockUserMe = require('./react-app/public/mock-user-me/mock_user_me.json');
 const mockOtherUsers = require('./react-app/public/mock-other-users/mock_other_users.json');
 const EnvsService = require('./services/EnvsService');
 const AuthService = require('./services/AuthService');
-const AuthManagementService = require('./services/AuthManagementService');
+const AuthManagementServiceSingleton = require('./services/AuthManagementService');
 
 dotenv.config();
 EnvsService.config(process.env);
 AuthService.config(authConfig);
-AuthManagementService.config(authConfig, mockOtherUsers);
+const AuthManagementService = AuthManagementServiceSingleton.getInstance(authConfig, mockOtherUsers);
 
 const app = express();
 const port = EnvsService.env.PORT;
@@ -32,8 +32,8 @@ app.use('/mock-user-me/mock_user_me.json', (req, res) => res.status(200).json({
     message: 'Me',
     data: mockUserMe
 }))
-const fetchUsers = AuthManagementService.fetchAuth0Users.bind(AuthManagementService)
-app.use('/users', AuthService.checkJwt, fetchUsers);
+
+app.use('/users', AuthService.checkJwt, AuthManagementService.fetchAuth0Users);
 
 app.use('/api', AuthService.checkJwt, proxy(EnvsService.env.API_SERVER, {
     proxyReqPathResolver: function (req) {
