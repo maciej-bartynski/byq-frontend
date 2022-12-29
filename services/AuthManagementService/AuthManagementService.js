@@ -43,6 +43,7 @@ const AuthManagementService = {
 
     fetchAuth0Users(req, res) {
 
+        console.log("this", this)
         if (EnvsService.env.USE_FAKE_OTHER_USERS) {
             res.status(200).json({
                 message: 'Users',
@@ -60,7 +61,7 @@ const AuthManagementService = {
                 headers: { authorization: `Bearer ${this.managementToken.access_token}` }
             };
 
-            request(options, function (error, response, body) {
+            request(options, (error, response, body) => {
                 if (error) {
                     return res.status(500).json({
                         message: "Failed to fetch users",
