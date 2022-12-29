@@ -7,15 +7,17 @@ const dotenv = require('dotenv');
 const fs = require('fs');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const authConfig = require('./auth-config/auth_config.staging.json');
+const authConfig = require('./react-app/public/auth-config/auth_config.staging.json');
+const mockUserMe = require('./react-app/public/mock-user-me/mock_user_me.json');
+const mockOtherUsers = require('./react-app/public/mock-other-users/mock_other_users.json');
 const EnvsService = require('./services/EnvsService');
 const AuthService = require('./services/AuthService');
-const { mockedUserMe, AuthManagementService } = require('./services/AuthManagementService');
+const AuthManagementService = require('./services/AuthManagementService');
 
 dotenv.config();
 EnvsService.config(process.env);
 AuthService.config(authConfig);
-AuthManagementService.config(authConfig);
+AuthManagementService.config(authConfig, mockOtherUsers);
 
 const app = express();
 const port = EnvsService.env.PORT;
@@ -25,10 +27,10 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use('/auth-config', (req, res) => res.status(200).json(authConfig));
-app.use('/mocked-me', (req, res) => res.status(200).json({
+app.use('/auth-config/auth_config.staging.json', (req, res) => res.status(200).json(authConfig));
+app.use('/mock-user-me/mock_user_me.json', (req, res) => res.status(200).json({
     message: 'Me',
-    data: mockedUserMe
+    data: mockUserMe
 }))
 app.use('/users', AuthService.checkJwt, (req, res, next) => AuthManagementService.fetchAuth0Users.bind(AuthManagementService)(req, res, next) );
 

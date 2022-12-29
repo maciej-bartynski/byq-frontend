@@ -9,8 +9,9 @@ const AuthManagementService = {
         token_type: ""
     },
 
-    config(authConfig) {
+    config(authConfig, mockOtherUsers) {
         this.authConfig = authConfig;
+        this.mockOtherUsers = mockOtherUsers;
         this.fetchManagementAccessToken();
     },
 
@@ -45,7 +46,7 @@ const AuthManagementService = {
         if (EnvsService.env.USE_FAKE_OTHER_USERS) {
             res.status(200).json({
                 message: 'Users',
-                data: mockedOtherUsers
+                data: this.mockOtherUsers
             })
         } else {
             /**
@@ -92,43 +93,4 @@ const AuthManagementService = {
     }
 }
 
-const mockedUserMe = {
-    name: 'John Jack Doe',
-    given_name: 'John',
-    family_name: 'Doe',
-    middle_name: 'Jack',
-    nickname: 'ripper',
-    preferred_username: 'joy',
-    email: 'john.doe@domain.org',
-    sub: 'oauth:john.doe.id'
-}
-
-const mockedOtherUsers = [
-    {
-        ...mockedUserMe,
-        user_id: mockedUserMe.sub
-    },
-    {
-        email: 'some.user@example.com',
-        user_id: 'oauth:some.user.id',
-        name: 'Some Person',
-        nickname: 'somix',
-    },
-    {
-        email: 'natalka.tomaszczyk@domain.org',
-        user_id: 'oauth:natalka.tomaszc.id',
-        name: 'Natalia Tomaszczyk',
-        nickname: 'Natrix',
-    },
-    {
-        email: 'maciek.bartek@domain.org',
-        user_id: 'oauth:maciek.bartek.id',
-        name: 'Bartek Bartyński',
-        nickname: 'eminem',
-    }
-]
-
-module.exports = {
-    AuthManagementService,
-    mockedUserMe
-}
+module.exports = AuthManagementService;

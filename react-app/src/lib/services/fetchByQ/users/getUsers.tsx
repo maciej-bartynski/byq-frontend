@@ -17,7 +17,10 @@ async function getUsers(): Promise<OtherUser[]> {
         throw new Error(e);
     }
 
-    const response = await fetch('/users', {
+    const USERS_URL = process.env.REACT_APP_SKIP_AUTH0 === 'true'
+        ? '/mock-other-users/mock_other_users.json'
+        : '/users'
+    const response = await fetch(USERS_URL, {
         method: 'GET', 
         signal: controllerStore.controller.signal,
         headers: {
@@ -36,7 +39,9 @@ async function getUsers(): Promise<OtherUser[]> {
         NoticesService.newMessage(users.message);
     }
 
-    return users.data || []
+    return process.env.REACT_APP_SKIP_AUTH0 === 'true'
+        ? users as any as OtherUser[]
+        : users.data || []
 }
 
 export default getUsers;

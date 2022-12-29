@@ -1,0 +1,10 @@
+{
+  "name": "John Jack Doe",
+  "given_name": "John",
+  "family_name": "Doe",
+  "middle_name": "Jack",
+  "nickname": "ripper",
+  "preferred_username": "joy",
+  "email": "john.doe@domain.org",
+  "sub": "oauth:john.doe.id"
+}

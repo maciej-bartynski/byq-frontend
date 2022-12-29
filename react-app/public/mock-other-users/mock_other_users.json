@@ -1,0 +1,31 @@
+[
+  {
+    "name": "John Jack Doe",
+    "given_name": "John",
+    "family_name": "Doe",
+    "middle_name": "Jack",
+    "nickname": "ripper",
+    "preferred_username": "joy",
+    "email": "john.doe@domain.org",
+    "sub": "oauth:john.doe.id",
+    "user_id": "ockedUserMe.sub"
+  },
+  {
+    "email": "some.user@example.com",
+    "user_id": "oauth:some.user.id",
+    "name": "Some Person",
+    "nickname": "somix"
+  },
+  {
+    "email": "natalka.tomaszczyk@domain.org",
+    "user_id": "oauth:natalka.tomaszc.id",
+    "name": "Natalia Tomaszczyk",
+    "nickname": "Natrix"
+  },
+  {
+    "email": "maciek.bartek@domain.org",
+    "user_id": "oauth:maciek.bartek.id",
+    "name": "Bartek Bartyński",
+    "nickname": "eminem"
+  }
+]

@@ -13,7 +13,7 @@ type AuthConfig = {
     audience: string,
 }
 
-const AUTH_CONFIG_URL = `/auth-config`;
+const AUTH_CONFIG_URL = `/auth-config/auth_config.staging.json`;
 
 const Auth0Wrapper: FC<PropsWithChildren> = ({ children }) => {
     const [loading, setLoading] = useState<boolean>(true);
@@ -65,7 +65,7 @@ const Auth0StageTwo: FC<PropsWithChildren> = ({ children }) => {
     const auth0 = process.env.REACT_APP_SKIP_AUTH0 === 'true' 
         ? developmentAuth0 
         : productionAuth0;
-
+console.log("a", auth0, developmentAuth0)
     window.sessionStorage.setItem(config.sessionStorageUser, JSON.stringify(auth0.user || ""));
     const accessToken = window.sessionStorage.getItem(config.sessionStorageAccessToken);
 

@@ -1,4 +1,3 @@
-import config from "config";
 import { useEffect, useState } from "react";
 
 const useDevelopmentAuth = () => {
@@ -16,11 +15,11 @@ const useDevelopmentAuth = () => {
                 isLoading: true,
             })
 
-            fetch(`/mocked-me`)
+            fetch(`/mock-user-me/mock_user_me.json`)
                 .then(response => response.json())
                 .then(authUser => {
                     setAuth({
-                        user: authUser.data,
+                        user: authUser,
                         isAuthenticated: true,
                         isLoading: false,
                     })
