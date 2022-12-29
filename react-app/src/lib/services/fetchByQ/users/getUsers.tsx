@@ -17,7 +17,7 @@ async function getUsers(): Promise<OtherUser[]> {
         throw new Error(e);
     }
 
-    const USERS_URL = process.env.REACT_APP_SKIP_AUTH0 === 'true'
+    const USERS_URL = process.env.REACT_APP_USE_FAKE_OTHER_USERS === 'true'
         ? '/mock-other-users/mock_other_users.json'
         : '/users'
     const response = await fetch(USERS_URL, {

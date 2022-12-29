@@ -27,6 +27,7 @@
     "build:local": "MARKER=local node ./envs/create-env.js && react-scripts build",
     "start": "MARKER=local node ./envs/create-env.js && react-scripts start",
     "build": "MARKER=staging node ./envs/create-env.js && react-scripts build",
+    "build:react-scripts": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

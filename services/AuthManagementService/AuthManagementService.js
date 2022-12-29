@@ -53,7 +53,6 @@ const AuthManagementService = {
              * This code block does not know if managementToken is expired.
              * Add checker logic and refetch if needed.
              */
-            
             const options = {
                 method: 'GET',
                 url: `https://${this.authConfig.domain}/api/v2/users`,
